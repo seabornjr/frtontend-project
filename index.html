@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <header id="header">How ya feelin today?</header>
+    <header id="header">Choose a Genre, then a playlist below</header>
     <div class="container">        
         <form action="">
             <input type="hidden" id="hidden_token">
@@ -25,7 +25,7 @@
                 </select>
             </div>                  
             <div class="col-sm-6 row form-group px-0">
-                <button type="submit" id="btn_submit" class="btn btn-success col-sm-12">Search</button>
+                <button type="submit" id="btn_submit" class="btn btn-dark col-sm-12">Search</button>
             </div>          
         </form>        
         <div class="row">
@@ -38,9 +38,21 @@
             </div>
         </div>   
     </div>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="app.js" type="text/javascript"></script>
+    <!-- The video -->
+    <video autoplay muted loop id="myVideo">
+      <source src="Beyonce Coachella Performance GIFs.mp4" type="video/mp4">
+    </video>
+
+    <!-- Optional: some overlay text to describe the video -->
+  <div class="content" id="instructions">
+     <h1>Let's Get Your Vibes Right!</h1>
+      <p>Click "Begin" to find a song</p>
+  <!-- Use a button to pause/play the video with JavaScript -->
+    <button id="myBtn">Begin</button>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="app.js" type="text/javascript"></script>
 </body>
 </html>

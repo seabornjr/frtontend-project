@@ -1,3 +1,24 @@
+
+// Get the video
+var video = document.getElementById("myVideo");
+var btn = document.getElementById('myBtn');
+var instructions = document.getElementById('instructions');
+// Pause and play the video, and change the button text
+function moveVideo() {
+    
+ btn.addEventListener('click', function() {
+    console.log('it clicked')   
+     video.style.zIndex = -1; 
+     //clear the instructions from the screen
+     instructions.style.display = 'none';
+     
+    console.log('done')
+  })
+}
+moveVideo();
+
+
+
 const APIController = (function() {
     
     const clientId = '3a2c472ed3554c55aed128929ea5533d';

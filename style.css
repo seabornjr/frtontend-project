@@ -1,6 +1,9 @@
 .btn.dropdown-toggle  {
     width:150px;
     text-align:left;
+    opacity: 1;
+    margin-left: 10px;
+    padding-left: 10px;
 }
 
 span.caret {
@@ -14,20 +17,25 @@ label {
 }
 
 .form-label {
-    padding-left:0px !important;
+    padding: left 10px !important;
+    
+}
+
+.form-control {
+    padding-left: 10px;
 }
 
 img {
-    width:140px;
-    height:140px;
+    width: 180px;
+    height:180px;
 }
 
-.btn-success {
-    background-color: #3b7d4a!important;
+.btn-dark {
+    background-color: #041508!important;
 }
 
-.btn-success:hover {
-    background-color: #4daf64!important;
+.btn-dark:hover {
+    background-color: #611b84!important;
 }
 
 img.track {
@@ -37,5 +45,57 @@ img.track {
 header {
     text-align: center;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    
+    font-size: xx-large;
+    color: white
 }
+
+.container {
+    background-color: gray;
+    opacity: 0.8;
+    border-color: black;
+    border-style: outset;
+    border-width: 10px;  
+}
+
+html, body {
+  height: 100%
+}
+
+
+/* Style the video: 100% width and height to cover the entire window */
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+  }
+  
+  /* Add some content at the bottom of the video/page */
+  .content {
+    position: fixed;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    width: 100%;
+    padding: 20px;
+  }
+  
+  /* Style the button used to pause/play the video */
+  #myBtn {
+    width: 200px;
+    font-size: 18px;
+    padding: 10px;
+    border: none;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  #myBtn:hover {
+    background: #ddd;
+    color: black;
+  }
+
+
+  

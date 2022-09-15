@@ -1,5 +1,5 @@
 
-// Get the video
+// Access the Beoyonce Video
 var video = document.getElementById("myVideo");
 var btn = document.getElementById('myBtn');
 var instructions = document.getElementById('instructions');
@@ -74,6 +74,7 @@ const APIController = (function() {
         });
 
         const data = await result.json();
+        console.log(data.items);
         return data.items;
     }
 
@@ -111,6 +112,7 @@ const APIController = (function() {
 // UI Module
 const UIController = (function() {
 
+    
     //object to hold references to html selectors
     const DOMElements = {
         selectGenre: '#select_genre',
@@ -153,28 +155,31 @@ const UIController = (function() {
         },
 
         // need method to create the song detail
-        createTrackDetail(img, title, artist) {
-
+        createTrackDetail(img, title, artist, href, id) {
+              console.log(DOMElements.divSongDetail);
             const detailDiv = document.querySelector(DOMElements.divSongDetail);
             // any time user clicks a new song, we need to clear out the song detail div
             detailDiv.innerHTML = '';
 
             const html = 
             `
-            <div class="row col-sm-12 px-0">
-                <img src="${img}" alt="">        
+            <div class="row col-sm-12 px-0" id='output'>
+                <img src="https://media.giphy.com/media/b2VxjMhx8nnjy/giphy.gif" alt="">        
             </div>
-            <div class="row col-sm-12 px-0">
+            <div class="row col-sm-12 px-0" id='output'>
                 <label for="Genre" class="form-label col-sm-12">${title}:</label>
             </div>
-            <div class="row col-sm-12 px-0">
+            <div class="row col-sm-12 px-0" id='output'>
                 <label for="artist" class="form-label col-sm-12">By ${artist}:</label>
             </div> 
+            <a href="${href}" id='output'>Click Here to View Full Song on Spotify</a>
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/${id}?utm_source=generator" width="100%" height="152" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
             `;
 
             detailDiv.insertAdjacentHTML('beforeend', html)
         },
-
+      
+   
         resetTrackDetail() {
             this.inputField().songDetail.innerHTML = '';
         },
@@ -267,7 +272,10 @@ const APPController = (function(UICtrl, APICtrl) {
         //get the track object
         const track = await APICtrl.getTrack(token, trackEndpoint);
         // load the track details
-        UICtrl.createTrackDetail(track.album.images[2].url, track.name, track.artists[0].name);
+        UICtrl.createTrackDetail(track.album.images[2].url, track.name, track.artists[0].name, track.external_urls.spotify, track.id);
+        console.log(track.external_urls.spotify);
+        console.log(track.id);
+        
     });    
 
     return {
@@ -277,7 +285,11 @@ const APPController = (function(UICtrl, APICtrl) {
         }
     }
 
+
 })(UIController, APIController);
 
 // will need to call a method to load the genres on page load
 APPController.init();
+var playButton = document.getElementById('togglePlay');
+
+

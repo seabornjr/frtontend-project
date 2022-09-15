@@ -18,11 +18,31 @@ label {
 
 .form-label {
     padding: left 10px !important;
+    justify-content: space-between;
     
 }
-
+form {
+    justify-content: space-between;
+}
+a{
+    color: black;
+    text-align: center;
+    font-style: bold;
+    font-size: medium;
+}
 .form-control {
     padding-left: 10px;
+    justify-content: space-between;
+    font-style: bold;
+}
+
+#output{
+    font-style: bold;
+    color: black;
+    border-width: 2px; 
+    text-align: center;
+    justify-content: space-between; 
+    justify-content: center;
 }
 
 img {
@@ -51,10 +71,12 @@ header {
 
 .container {
     background-color: gray;
-    opacity: 0.8;
+    opacity: 0.9;
+    overflow: scroll;
     border-color: black;
     border-style: outset;
-    border-width: 10px;  
+    border-width: 10px; 
+    justify-content: space-between; 
 }
 
 html, body {
@@ -97,5 +119,14 @@ html, body {
     color: black;
   }
 
+  h2 {
+      color:  black;
+      font-style: bold;
+  }
 
+  h4 {
+    color:  black;
+    font-style: bold;
+    text-indent: 130px;
+  }
   

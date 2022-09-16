@@ -12,4 +12,3 @@ Then the user selects a track
 
 The user selects a track title and the information will appear
 
-

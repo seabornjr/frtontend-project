@@ -4,10 +4,11 @@ var video = document.getElementById("myVideo");
 var btn = document.getElementById('myBtn');
 var instructions = document.getElementById('instructions');
 // Pause and play the video, and change the button text
-function moveVideo() {
+function beyonce() {
     
  btn.addEventListener('click', function() {
-    console.log('it clicked')   
+    console.log('it clicked') 
+   
      video.style.zIndex = -1; 
      //clear the instructions from the screen
      instructions.style.display = 'none';
@@ -15,11 +16,11 @@ function moveVideo() {
     console.log('done')
   })
 }
-moveVideo();
+beyonce();
 
 
 
-const APIController = (function() {
+var APIController = (function() {
     
     const clientId = '3a2c472ed3554c55aed128929ea5533d';
     const clientSecret = '4af1ebe4ff1347c58a964cb0e77535f1';
@@ -110,11 +111,11 @@ const APIController = (function() {
 
 
 // UI Module
-const UIController = (function() {
+var UIController = (function() {
 
     
     //object to hold references to html selectors
-    const DOMElements = {
+    var DOMElements = {
         selectGenre: '#select_genre',
         selectPlaylist: '#select_playlist',
         buttonSubmit: '#btn_submit',
@@ -173,7 +174,7 @@ const UIController = (function() {
                 <label for="artist" class="form-label col-sm-12">By ${artist}:</label>
             </div> 
             <a href="${href}" id='output'>Click Here to View Full Song on Spotify</a>
-            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/${id}?utm_source=generator" width="100%" height="152" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/${id}?utm_source=generator" width="100%" height="152" frameborder="0" volume=".5" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
             `;
 
             detailDiv.insertAdjacentHTML('beforeend', html)
@@ -207,7 +208,7 @@ const UIController = (function() {
 
 })();
 
-const APPController = (function(UICtrl, APICtrl) {
+var APPController = (function(UICtrl, APICtrl) {
 
     // get input field object ref
     const DOMInputs = UICtrl.inputField();
